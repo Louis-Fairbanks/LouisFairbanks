@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Fairbanks</title>
+    <link type="text/css" rel="stylesheet" href="/spanishStyles.css"/>
+    <script src="https://kit.fontawesome.com/7997e98019.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="landingPage">
+    <div class="navbarContainer">
+          <img id="logo" src="images/LouisFairbanks Logo Cropped.png" alt="LouisFairbanks Logo"
+          onClick="document.getElementById('landingPage').scrollIntoView();"/>
+          <nav>
+            <li onClick="document.getElementById('aboutSection').scrollIntoView();">Sobre Mi</li>
+            <li onClick="document.getElementById('myWork').scrollIntoView();">Mi Trabajo</li>
+            <li onClick="document.getElementById('contact').scrollIntoView();">Contacto</li>
+          </nav>
+          <div id="languageToggle" onclick="location.href = '/';">
+            <a>EN</a>
+            <img id="flagIcon" src="images/united-kingdom.png" alt="English flag"/>  
+          </div>
+    </div>
+    <div id="top">
+        <h1 class="slidein">Sitios web de ultima generacion, a la medida de tu negocio</h1>
+        <!-- <button id="contactButton"
+        onClick="document.getElementById('contact').scrollIntoView();">Contact</button> -->
+        <button id="sampleButton"
+        onClick="document.getElementById('myWork').scrollIntoView();">Empecemos</button>
+    </div>
+  </div>
+  <div id="aboutSection">
+    <img id="profilePicture" src="images/ProfilePic.jpg" alt="profile picture"/>
+    <div id="infoSection">
+    <h2>Soy Louis, un desarrollador web basado en Montevideo, Uruguay.</h2>
+    <h3>Mi especialidad consiste en desarrollo front-end, utilizando de frameworks como Bootstrap y React. Trabajo duro para
+    asegurar que tu sitio genere conversion atra vez de disenos atractivos y receptivos y un gran experiencia de usuario.
+    Para operaciones backend, utilizo Nodejs y Expressjs, y para manejar bases de datos uso Mongodb o SQL.</h3>
+    <h3>Stack | </h3>
+    <img id="techStack" src="images/Tech Stack.png" alt="tech stack"/>
+  </div>
+</div>
+<div id="myWork">
+  <h1>Muestras</h1>
+  <a><img id="MundoMusicaPic" src="images/MundoMusica Screenshot.jpg" alt="MundoMusica Screenshot"/></a>
+  <div id="MundoMusica">
+  <h2>Mundo Musica</h2>
+  <h3>Una aplicacion web que conecta a musicos desde alrededor del mundo. Hay funcionalidad para la creacion de usuarios
+    y su autenticacion, consultas a bases de datos y almacenaje de informacion seguros, subida de medios, y mas. Los mensajes
+    son manejados por el API de Twilio.
+  </h3>
+  <h3>Stack | 
+    <i class="fa-brands fa-react"></i>
+    <i class="fa-brands fa-html5"></i>
+    <i class="fa-brands fa-css3-alt"></i>
+    <i class="fa-brands fa-node-js"></i>
+    <i class="fa-brands fa-envira"></i>
+  </h3>
+  <h3>    Github repos | Frontend: <a href="https://github.com/Louis-Fairbanks/MundoMusica" target="_blank"><i class="fa-brands fa-github"></i></a>
+    Backend: <a href="https://github.com/Louis-Fairbanks/MundoMusicaBackend" target="_blank"><i class="fa-brands fa-github"></i></a></h3>
+</div>
+<!-- <div id="BarracaBahamas">
+  <img alt="Barraca Bahamas">
+  <h2>Barraca Bahamas</h2>
+  <h3>A sample website for a construction supplies store. It includes filtering for different categories and search
+    terms, cart functionality, and payment processing via Stripe.</h3>
+  <h3>Stack | </h3>
+</div> -->
+</div>
+<div id="contact">
+  <h2>Contacto</h2>
+  <div id="contactWrapper">
+  <div class="contactDiv">
+    <h3>Por favor, contacteme por mensaje directo en LinkedIn o por email en base216ball@yahoo.com</h3>
+    <div class="horizontalBrands">
+      <a href="https://linkedin.com/in/louis-fairbanks-504223240" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+      <i class="fa-solid fa-envelope fa-2xl"></i>
+    </div>
+  </div>
+  <div class="contactDiv">
+    <h3>Abajo se encuentran los links a mis cuentas de Github y StackOverflow.</h3>
+    <div class="horizontalBrands">
+      <a href="https://github.com/Louis-Fairbanks" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+      <a href="https://stackoverflow.com/users/21875951/louis-f" target="_blank"><i class="fa-brands fa-stack-overflow fa-2xl"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

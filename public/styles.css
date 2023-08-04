@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'Mokoto Glitch';
+    src: url("fonts/Mokoto Glitch.ttf");
+}
+@font-face {
+    font-family: 'Sublima-Light';
+    src: url('fonts/Sublima-Light.otf');
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Sublima-Light', sans-serif;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-weight:bolder;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: inherit;
+}
+li{
+    cursor: pointer;
+}
+/****************Top Section******************/
+#landingPage{
+    background: linear-gradient(
+        rgba(0, 0, 0, .6), 
+        rgba(0, 0, 0, .6)
+      ),
+      url('images/TokyoNightscape.jpg');
+    background-size: 100% 100vh;
+    height: 100vh;
+    width: 100%;
+}
+.slidein {
+    animation-duration: 2s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-top: 75%;
+      width: 100%;
+    }
+  
+    to {
+      margin-top: 49.312px;
+      width: 100%;
+    }
+  }
+#top{
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    right: 100px;
+    text-align: center;
+}
+#top h1{
+    font-family: 'Mokoto Glitch', sans-serif;
+    font-size: 4rem;
+    z-index: 1;
+    color: #39FF14;
+    font-weight: 700;
+    text-shadow: 3px 3px #060606;
+    border-radius: 10px;
+}
+#top button{
+    border: none;
+    height: 75px;
+    width: 500px;
+    border-radius: 20px;
+    margin: 0 25px;
+    font-size: 3rem;
+    font-weight: 500;
+}
+#sampleButton{
+    background-color: rgb(41, 39, 39);
+    color: white;
+}
+#sampleButton:hover{
+    background-color: white;
+    color: black;
+}
+#contactButton{
+    background-color: aqua;
+    color: black;
+}
+#contactButton:hover{
+    background-color: white;
+}
+.navbarContainer{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: right;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(59, 69, 178);
+}
+nav{
+    display: inline-flex;
+    flex-direction: row;
+    white-space: nowrap;
+}
+.navbarContainer li{
+    list-style: none;
+    font-size: 1.25rem;
+    width: fit-content;
+    padding: 12px 20px;
+    text-align: center;
+}
+.navbarContainer li:hover{
+    color: white;
+    background-color: black;
+}
+#logo{
+    text-align: left;
+    margin-right: 1069px;
+    height: 59.675px;
+    width: 60px;
+    background-color: rgb(59, 69, 178);
+}
+#logo:hover{
+    cursor: pointer;
+}
+#languageToggle{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+#languageToggle a{
+    padding: 3px 0;
+}
+#languageToggle:hover{
+    background-color: black;
+    color: white;
+}
+#flagIcon{
+    width: 36px;
+    height: 25px;
+}
+/**********About Section*****************/
+#aboutSection{
+    height: 100vh;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0ffff;
+}
+#profilePicture{
+    height: 300px;
+    width: 225px;
+    border-radius: 50px;
+    display: inline;
+    margin-right: 30px;
+    margin-left: 100px;
+}
+h2{
+    display: inline;
+    width: fit-content;
+    font-weight: 700;
+}
+h3{
+    font-weight: 400;
+    color:rgb(4, 86, 86);
+}
+#infoSection{
+    width: 490px;
+}
+#techStack{
+    width: 320px;
+    height: 45px;
+    position: absolute;
+    right: 395px;
+    top: 166vh;
+}
+/***********My Work Section****************/
+#myWork{
+    height: 100vh;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #f0ffff;   
+}
+#myWork h1{
+    position: absolute;
+    top: 210vh;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+#MundoMusicaPic{
+    display: inline;
+    flex-direction: row;
+    width: 384px;
+    height: 185.2px;
+}
+#MundoMusica{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: first baseline;
+    width: 500px;
+    margin-left: 30px;
+}
+#MundoMusica h2, h3{
+    margin: 2px 0 2px 0;
+}
+#MundoMusica h2{
+    font-size: 2.3rem;
+    color:rgb(121, 82, 36);
+}
+.fa-brands{
+    height: 20px;
+    width: 20px;
+}
+.fa-envira{
+    transform: rotate(45deg);
+}
+/******************Contact Section*****************/
+#contact{
+    height: 75vh;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+    background-color: #f0ffff;   
+}
+#contact h2{
+    font-size: 3rem;
+    font-weight: bolder;
+    margin-top: -20px;
+}
+.horizontalBrands{
+    display: flex;
+    flex-direction: row;
+}
+.horizontalBrands i{
+    margin: 25px;
+}
+.contactDiv{
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    margin: 0 30px;
+    align-items: center;
+    font-size: 1.25rem;
+    text-align: center;
+}
+#contactWrapper{
+    display: flex;
+    flex-direction: column;
+}
