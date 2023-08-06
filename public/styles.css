@@ -28,8 +28,8 @@ li{
 /****************Top Section******************/
 #landingPage{
     background: linear-gradient(
-        rgba(0, 0, 0, .6), 
-        rgba(0, 0, 0, .6)
+        rgba(0, 0, 0, .5), 
+        rgba(0, 0, 0, .5)
       ),
       url('images/TokyoNightscape.jpg');
     background-size: 100% 100vh;
@@ -72,7 +72,7 @@ li{
 #top button{
     border: none;
     height: 75px;
-    width: 500px;
+    width: 400px;
     border-radius: 20px;
     margin: 0 25px;
     font-size: 3rem;
@@ -122,11 +122,11 @@ nav{
     background-color: black;
 }
 #logo{
-    text-align: left;
-    margin-right: 1069px;
     height: 59.675px;
     width: 60px;
     background-color: rgb(59, 69, 178);
+    position: absolute;
+    left: 0;
 }
 #logo:hover{
     cursor: pointer;
@@ -163,10 +163,17 @@ nav{
 #profilePicture{
     height: 300px;
     width: 225px;
-    border-radius: 50px;
+    border-radius: 30px;
     display: inline;
     margin-right: 30px;
     margin-left: 100px;
+    background: linear-gradient(
+        90deg,
+        #5de0e6, 
+        #004aad
+      );
+    border:#060606;
+    border: solid;
 }
 h2{
     display: inline;
@@ -180,12 +187,19 @@ h3{
 #infoSection{
     width: 490px;
 }
+#infoSection h3{
+    width: fit-content;
+    display: inline-block;
+}
 #techStack{
-    width: 320px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+#techStackImg{
+    display: inline;
     height: 45px;
-    position: absolute;
-    right: 395px;
-    top: 166vh;
+    margin-top: 10px;
 }
 /***********My Work Section****************/
 #myWork{
@@ -195,20 +209,24 @@ h3{
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
-    background-color: #f0ffff;   
+    align-items:center;
+    background-color: #f0ffff;  
 }
 #myWork h1{
-    position: absolute;
-    top: 210vh;
+    display: block;
     font-size: 3rem;
     font-weight: bolder;
+    width: 100%;
+    margin-bottom: -300px;
+    text-align: center;
+    margin-top: -200px;
 }
 #MundoMusicaPic{
     display: inline;
     flex-direction: row;
     width: 384px;
     height: 185.2px;
+    margin-top: -200px;
 }
 #MundoMusica{
     display: inline-flex;
@@ -216,6 +234,7 @@ h3{
     align-items: first baseline;
     width: 500px;
     margin-left: 30px;
+    margin-top: -200px;
 }
 #MundoMusica h2, h3{
     margin: 2px 0 2px 0;
