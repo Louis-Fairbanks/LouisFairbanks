@@ -22,11 +22,57 @@
             <a>ES</a>
             <img id="flagIcon" src="images/spain-flag-icon.svg" alt="Spanish flag"/>  
           </div>
+          <i id="dropdownButton" class="fa-solid fa-bars fa-2xl"></i>
+          <div id="dropDown">
+              <li class='dropDownItem' onClick="document.getElementById('aboutSection').scrollIntoView();">About</li>
+              <li class='dropDownItem' onClick="document.getElementById('myWork').scrollIntoView();">My Work</li>
+              <li class='dropDownItem' onClick="document.getElementById('contact').scrollIntoView();">Contact</li>
+              <li class='dropDownItem' onclick="location.href = '/es';">Español</li>
+          </div>
+          <script>
+            let myButton = document.getElementById('dropdownButton');
+            let mySidebar = document.getElementById('dropDown');
+            let buttonClicked = false;
+        
+            myButton.addEventListener('click', function() {
+                mySidebar.style.visibility = 'visible';
+                document.getElementById('dropdownButton').style.visibility = 'hidden';
+                buttonClicked = true;
+            });
+
+            let myItems = document.getElementsByClassName('dropDownItem');
+
+            for(let i = 0; i < myItems.length; i++){
+              myItems[i].addEventListener('click', function(){
+              mySidebar.style.visibility = 'hidden';
+              document.getElementById('dropdownButton').style.visibility = 'visible';
+              buttonClicked = false;
+              })
+            }
+            window.addEventListener('resize', function() {
+        if (window.innerWidth > 445) {
+            myButton.style.visibility = 'hidden';
+            mySidebar.style.visibility = 'hidden';
+            buttonClicked = false;
+        }
+        // else {
+        //   if(!buttonClicked){
+        //   myButton.style.visibility = 'visible';}
+        //   if(buttonClicked){
+        //   mySidebar.style.visibility = 'visible';}
+        //   buttonClicked = false;
+        // }
+    });
+    window.addEventListener('click', function(event){
+          if(window.innerWidth < 445 && event.target != myButton && event.target.id != mySidebar){
+              myButton.style.visibility = 'visible';
+              mySidebar.style.visibility = 'hidden';
+          }
+        })
+        </script>
     </div>
     <div id="top">
         <h1 class="slidein">State-of-the-art websites, custom-built for your business</h1>
-        <!-- <button id="contactButton"
-        onClick="document.getElementById('contact').scrollIntoView();">Contact</button> -->
         <button id="sampleButton"
         onClick="document.getElementById('myWork').scrollIntoView();">Get Started</button>
     </div>
@@ -48,7 +94,8 @@
 </div>
 <div id="myWork">
     <h1>Samples</h1>
-  <a><img id="MundoMusicaPic" src="images/MundoMusica Screenshot.jpg" alt="MundoMusica Screenshot"/></a>
+  <a><img id="MundoMusicaPic" src="images/MundoMusica Screenshot.jpg" alt="MundoMusica Screenshot"
+    onclick="window.open('https://mundomusica.netlify.app/', '_blank')"/></a>
   <div id="MundoMusica">
   <h2>Mundo Musica</h2>
   <h3>A web application that connects musicians from around the globe. There is full support for user creation
@@ -80,7 +127,7 @@
     <h3>Please contact me via a direct message on LinkedIn or by email at base216ball@yahoo.com</h3>
     <div class="horizontalBrands">
       <a href="https://linkedin.com/in/louis-fairbanks-504223240" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
-      <i class="fa-solid fa-envelope fa-2xl"></i>
+      <a href="mailto:base216ball@yahoo.com"><i class="fa-solid fa-envelope fa-2xl"></i></a>
     </div>
   </div>
   <div class="contactDiv">

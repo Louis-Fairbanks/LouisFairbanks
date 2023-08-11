@@ -15,6 +15,8 @@ body{
     margin: 0;
     padding: 0;
     font-weight:bolder;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 a{
     text-decoration: none;
@@ -28,11 +30,11 @@ li{
 /****************Top Section******************/
 #landingPage{
     background: linear-gradient(
-        rgba(0, 0, 0, .6), 
-        rgba(0, 0, 0, .6)
+        rgba(0, 0, 0, .5), 
+        rgba(0, 0, 0, .5)
       ),
       url('images/TokyoNightscape.jpg');
-    background-size: 100% 100vh;
+    background-size: 100vw 100vh;
     height: 100vh;
     width: 100%;
 }
@@ -53,6 +55,57 @@ li{
       width: 100%;
     }
   }
+
+  @media (width > 488px){
+    .fa-bars{
+        visibility: hidden;
+        position: absolute;
+      } 
+      #dropDown{
+        visibility: hidden;
+        position: absolute;
+      }
+  }
+  @media (width < 360px){
+    #top h1{
+        font-size: 4vh !important;
+        margin: -20px 40px 11.792px -40px !important;
+        width: 200px !important;
+    }
+    #top button{
+        align-self: center !important;
+        margin-left: 5px !important;
+    }
+  }
+  @media (width <= 488px){
+    nav li{
+        visibility: hidden;
+      }
+      #languageToggle{
+        visibility: hidden;
+      }
+      .fa-bars{
+        position: absolute;
+        right: 10px;
+        top: 28px;
+        color: white;
+      }
+      #dropDown{
+        visibility: hidden;
+      }
+  }
+  #dropDown li{
+    background-color: rgb(59, 69, 178);
+    width: 100px;
+  }
+  #dropDown li:hover{
+    background-color: black;
+    color: white;
+  }
+  #dropdownButton:hover{
+    cursor: pointer;
+  }
+
 #top{
     position: absolute;
     top: 150px;
@@ -62,7 +115,7 @@ li{
 }
 #top h1{
     font-family: 'Mokoto Glitch', sans-serif;
-    font-size: 4rem;
+    font-size: 4.5vmax;
     z-index: 1;
     color: #39FF14;
     font-weight: 700;
@@ -71,11 +124,11 @@ li{
 }
 #top button{
     border: none;
-    height: 75px;
-    width: 500px;
+    height: 5vmax;
+    width: 20vmax;
     border-radius: 20px;
     margin: 0 25px;
-    font-size: 3rem;
+    font-size: 3vmax;
     font-weight: 500;
 }
 #sampleButton{
@@ -122,11 +175,11 @@ nav{
     background-color: black;
 }
 #logo{
-    text-align: left;
-    margin-right: 1024px;
     height: 59.675px;
     width: 60px;
     background-color: rgb(59, 69, 178);
+    position: absolute;
+    left: 0;
 }
 #logo:hover{
     cursor: pointer;
@@ -154,19 +207,94 @@ nav{
 #aboutSection{
     height: 100vh;
     width: 100%;
+    max-width: 100%;
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: #f0ffff;
 }
+
+@media (width < 720px){
+    #aboutSection{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+@media(height < 600px){
+    #myWork h1{
+        margin-bottom: -50px !important;
+        background-color: #f0ffff;
+    }
+}
+@media(width < 385px){
+    #techStack h3{
+        position: absolute;
+        visibility: hidden;
+    }
+}
+@media (385px < width < 1000px){
+    #infoSection{
+        margin: auto !important;
+    }
+}
+@media (width < 1000px){ /*Styles for mobile*/
+    #aboutSection{
+        display:block;
+        text-align: center;
+        height: fit-content;
+    }
+    #profilePicture{
+        height: 48vh !important;
+        width: 36vh !important;
+        margin: 30px auto 0 auto !important;
+    }
+    #techStackImg{
+        width: 300px;
+        height: 43px;
+    }
+    #myWork{
+        height: fit-content !important;
+    }
+    #myWork h1{
+        margin-top: 0 !important;
+        display: block;
+        position: inherit;
+    }
+    #MundoMusicaPic{
+        width: 350px;
+        position: relative;
+        margin-top: 100px !important;
+    }
+    #MundoMusica h2{
+        margin-top: 200px !important;
+        display: block !important;
+        position: inherit;
+    }
+    .contactDiv h3{
+        font-size: 1rem;
+        margin: 0 !important;
+        max-width: 83%;
+    }
+    .contactDiv{
+        max-width: 100%;
+        margin: 0 !important;
+    }
+}
+
 #profilePicture{
     height: 300px;
     width: 225px;
-    border-radius: 50px;
+    border-radius: 30px;
     display: inline;
-    margin-right: 30px;
-    margin-left: 100px;
+    margin: auto 30px auto 20px;
+    background: linear-gradient(
+        90deg,
+        #5de0e6, 
+        #004aad
+      );
+    border:#060606;
+    border: solid;
 }
 h2{
     display: inline;
@@ -179,13 +307,22 @@ h3{
 }
 #infoSection{
     width: 490px;
+    max-width: 100%;
+}
+#infoSection h3{
+    width: fit-content;
+    display: inline-block;
+    max-width: 490px;
 }
 #techStack{
-    width: 320px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+#techStackImg{
+    display: inline;
     height: 45px;
-    position: absolute;
-    right: 445px;
-    top: 168vh;
+    margin-top: 10px;
 }
 /***********My Work Section****************/
 #myWork{
@@ -195,20 +332,38 @@ h3{
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
-    background-color: #f0ffff;   
+    align-items:center;
+    background-color: #f0ffff;  
+    max-width: 100%;
 }
 #myWork h1{
-    position: absolute;
-    top: 210vh;
+    display: block;
     font-size: 3rem;
     font-weight: bolder;
+    width: 100%;
+    margin-bottom: -300px;
+    text-align: center;
+    margin-top: -200px;
+}
+@media( 424px < width < 932px){
+    #myWork h1{
+        margin-bottom: -200px;
+    }
+}
+@media(width <= 424px){
+    #myWork h1{
+        margin-bottom: -100px;
+    }
 }
 #MundoMusicaPic{
     display: inline;
     flex-direction: row;
     width: 384px;
     height: 185.2px;
+    margin-top: -200px;
+}
+#MundoMusicaPic:hover{
+    cursor: pointer;
 }
 #MundoMusica{
     display: inline-flex;
@@ -216,6 +371,7 @@ h3{
     align-items: first baseline;
     width: 500px;
     margin-left: 30px;
+    margin-top: -200px;
 }
 #MundoMusica h2, h3{
     margin: 2px 0 2px 0;
@@ -233,13 +389,12 @@ h3{
 }
 /******************Contact Section*****************/
 #contact{
-    height: 75vh;
     width: 100%;
     display: inline-flex;
     flex-direction: column;
     justify-content: first baseline;
     align-items: center;
-    background-color: #f0ffff;   
+    background-color: #f0ffff;  
 }
 #contact h2{
     font-size: 3rem;
@@ -265,4 +420,10 @@ h3{
 #contactWrapper{
     display: flex;
     flex-direction: column;
+}
+.fa-envelope:hover{
+    cursor: pointer;
+}
+.fa-envelope{
+    color: black;
 }

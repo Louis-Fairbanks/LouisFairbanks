@@ -14,7 +14,7 @@
           <img id="logo" src="images/LouisFairbanks Logo Cropped.png" alt="LouisFairbanks Logo"
           onClick="document.getElementById('landingPage').scrollIntoView();"/>
           <nav>
-            <li onClick="document.getElementById('aboutSection').scrollIntoView();">Sobre Mi</li>
+            <li onClick="document.getElementById('aboutSection').scrollIntoView();">Sobre Mí</li>
             <li onClick="document.getElementById('myWork').scrollIntoView();">Mi Trabajo</li>
             <li onClick="document.getElementById('contact').scrollIntoView();">Contacto</li>
           </nav>
@@ -22,34 +22,85 @@
             <a>EN</a>
             <img id="flagIcon" src="images/united-kingdom.png" alt="English flag"/>  
           </div>
+          <i id="dropdownButton" class="fa-solid fa-bars fa-2xl"></i>
+          <div id="dropDown">
+              <li class='dropDownItem' onClick="document.getElementById('aboutSection').scrollIntoView();">Sobre Mí</li>
+              <li class='dropDownItem' onClick="document.getElementById('myWork').scrollIntoView();">Mi Trabajo</li>
+              <li class='dropDownItem' onClick="document.getElementById('contact').scrollIntoView();">Contacto</li>
+              <li class='dropDownItem' onclick="location.href = '/';">Ingles</li>
+          </div>
+          <script>
+            let myButton = document.getElementById('dropdownButton');
+            let mySidebar = document.getElementById('dropDown');
+            let buttonClicked = false;
+        
+            myButton.addEventListener('click', function() {
+                mySidebar.style.visibility = 'visible';
+                document.getElementById('dropdownButton').style.visibility = 'hidden';
+                buttonClicked = true;
+            });
+
+            let myItems = document.getElementsByClassName('dropDownItem');
+
+            for(let i = 0; i < myItems.length; i++){
+              myItems[i].addEventListener('click', function(){
+              mySidebar.style.visibility = 'hidden';
+              document.getElementById('dropdownButton').style.visibility = 'visible';
+              buttonClicked = false;
+              })
+            }
+            window.addEventListener('resize', function() {
+        if (window.innerWidth > 488) {
+            myButton.style.visibility = 'hidden';
+            mySidebar.style.visibility = 'hidden';
+            buttonClicked = false;
+        }
+        // else {
+        //   if(!buttonClicked){
+        //   myButton.style.visibility = 'visible';}
+        //   if(buttonClicked){
+        //   mySidebar.style.visibility = 'visible';}
+        //   buttonClicked = false;
+        // }
+    });
+    window.addEventListener('click', function(event){
+          if(window.innerWidth < 488 && event.target != myButton && event.target.id != mySidebar){
+              myButton.style.visibility = 'visible';
+              mySidebar.style.visibility = 'hidden';
+          }
+        })
+        </script>
     </div>
     <div id="top">
-        <h1 class="slidein">Sitios web de ultima generacion, a la medida de tu negocio</h1>
-        <!-- <button id="contactButton"
-        onClick="document.getElementById('contact').scrollIntoView();">Contact</button> -->
+        <h1 class="slidein">Sitios web de última generación, a la medida de tu negocio</h1>
         <button id="sampleButton"
-        onClick="document.getElementById('myWork').scrollIntoView();">Empecemos</button>
+        onClick="document.getElementById('myWork').scrollIntoView();">Empecemos </button>
     </div>
   </div>
   <div id="aboutSection">
-    <img id="profilePicture" src="images/ProfilePic.jpg" alt="profile picture"/>
+    <img id="profilePicture" src="images/OnlyMe.png" alt="profile picture"/>
     <div id="infoSection">
     <h2>Soy Louis, un desarrollador web basado en Montevideo, Uruguay.</h2>
-    <h3>Mi especialidad consiste en desarrollo front-end, utilizando de frameworks como Bootstrap y React. Trabajo duro para
-    asegurar que tu sitio genere conversion atra vez de disenos atractivos y receptivos y un gran experiencia de usuario.
-    Para operaciones backend, utilizo Nodejs y Expressjs, y para manejar bases de datos uso Mongodb o SQL.</h3>
-    <h3>Stack | </h3>
-    <img id="techStack" src="images/Tech Stack.png" alt="tech stack"/>
+    <br/>
+    <h3>Mi especialidad consiste en desarrollo front-end, utilizando frameworks como Bootstrap y React.
+      Trabajo duro para asegurar que tu sitio genere conversion a través de diseños atractivos y receptivos
+      y un gran experiencia de usuario. Para operaciónes backend, utilizo Nodejs y Expressjs, y para manejar
+       bases de datos uso Mongodb o SQL.</h3>
+      <br/>
+      <div id="techStack">
+    <h3>Tech Stack | </h3>
+    <img id="techStackImg" src="images/Tech Stack.png" alt="tech stack"/>
+  </div>
   </div>
 </div>
 <div id="myWork">
-  <h1>Muestras</h1>
-  <a><img id="MundoMusicaPic" src="images/MundoMusica Screenshot.jpg" alt="MundoMusica Screenshot"/></a>
+    <h1>Muestras</h1>
+  <a><img id="MundoMusicaPic" src="images/MundoMusica Screenshot.jpg" alt="MundoMusica Screenshot"
+    onclick="window.open('https://mundomusica.netlify.app/', '_blank')"/></a>
   <div id="MundoMusica">
   <h2>Mundo Musica</h2>
-  <h3>Una aplicacion web que conecta a musicos desde alrededor del mundo. Hay funcionalidad para la creacion de usuarios
-    y su autenticacion, consultas a bases de datos y almacenaje de informacion seguros, subida de medios, y mas. Los mensajes
-    son manejados por el API de Twilio.
+  <h3>Una aplicación web que conecta a músicos desde alrededor del mundo. Hay funcionalidad para la creación de usuarios y su autenticación, consultas a 
+    bases de datos y almacenaje de información seguros, subida de videos, y mas. Los mensajes son manejados por el API de Twilio.
   </h3>
   <h3>Stack | 
     <i class="fa-brands fa-react"></i>
@@ -76,7 +127,7 @@
     <h3>Por favor, contacteme por mensaje directo en LinkedIn o por email en base216ball@yahoo.com</h3>
     <div class="horizontalBrands">
       <a href="https://linkedin.com/in/louis-fairbanks-504223240" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
-      <i class="fa-solid fa-envelope fa-2xl"></i>
+      <a href="mailto:base216ball@yahoo.com"><i class="fa-solid fa-envelope fa-2xl"></i></a>
     </div>
   </div>
   <div class="contactDiv">
